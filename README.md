@@ -1,8 +1,7 @@
 # promo6-groupe1-projet3
 Bienvenue sur le repository de l'examen pour le projet 3 du groupe 1
 
-Une instance du site internet est visible à l'adresse : https://agdzavocats.ladisquette.fr/
-Le repository est visible ici : https://github.com/grub404/promo6-groupe1-projet3
+
 
 Installation :
 ------------------
