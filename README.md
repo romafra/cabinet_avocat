@@ -1,5 +1,5 @@
-# promo6-groupe1-projet3
-Bienvenue sur le repository de l'examen pour le projet 3 du groupe 1
+
+Bienvenue 
 
 
 
