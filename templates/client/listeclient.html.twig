@@ -1,0 +1,66 @@
+{% extends 'template.html.twig' %}
+
+
+{% block body %}
+ <section class="prez_compétence_section">
+    <div class="container">
+        <p>&nbsp;</p>
+      
+<div class="container">
+            <div class="row">
+                <!--La classe bg-info ajoute un fond bleu à l'élément-->
+               {# <a class="col-2" class="btn btn-xs btn-primary" href={{ path('dossierliste') }} >Vos dossiers</a> #}
+                <div class="col-2"><a class="btn btn-primary btn-sm" style="background-color: #027182;" href={{ path('dossierliste') }} >Vos Dossiers</a></div>
+                <!--La classe bg-warning ajoute un fond jaune à l'élément-->
+                <div class="col-8">  <h2 class="custom_heading">Liste des clients</h2>
+        <hr></div>
+                <!--La classe bg-success ajoute un fond vert à l'élément-->
+                <div class="col-2"></div>
+            </div>
+</div>
+
+<div>Selectionnez un client</div>
+<table class="table table-hover table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Sel</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Statut</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+    
+        {% for client in tabClient %}
+       
+      <tr>
+        <td> <a class="col-2" class="btn btn-xs btn-primary" href={{ path('dossierform',{ 'id': client.id,'client':client.lastname}) }} ><i style='font-size:24px' class='fa'>&#xf0a4;</i></a></td>
+        <td>{{ client.lastname }}</td>
+        <td>{{ client.firstname }}</td>
+        
+        
+        <td>
+            {% if client.statut == 1 %}
+                    En cours
+            {% elseif client.statut  == 0 %}
+                    Suspendu
+            {% else %}
+                    Archivé
+            {% endif %}        
+        </td>
+       
+      </tr>
+      
+      {% endfor %}
+    </tbody>
+  </table>
+        <div>{{ knp_pagination_render(tabClient) }}</div>
+    </div>
+    <div class="container">
+        <div class="row">
+                <div class="col-12 mt-5"></div>
+        </div>
+</div>
+</section>
+{% endblock %}

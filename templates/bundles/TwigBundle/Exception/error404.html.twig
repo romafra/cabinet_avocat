@@ -1,0 +1,19 @@
+{# templates/bundles/TwigBundle/Exception/error404.html.twig => page erreur 404 personnalisée#}
+{% extends 'base.html.twig' %}
+{% block title %}
+    Erreur {{status_code}} - {{ parent() }}
+{% endblock %}
+{% block body %}
+{#<div class='titre'>{{ titre|trans|raw }}</div>#}
+    <div style ="font-weight: Normal;font-size:20px;">
+        <br>
+L'administrateur du site vous prie de l'excuser car si vous arrivez sur cette page, c'est probablement qu'il y a un lien brisé sur ce site (la fameuse erreur "{{status_code}} {{status_text}}").<br><br>
+    </div>
+    <div  id="cadreliste">
+        <ul>
+            <li>
+                    <a href="#null" onclick="javascript:history.back();">{% trans %}Previous page{% endtrans %}</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="Le Cabinet AGDZ Avocats répond à vos différents besoins en Droit Public, Droit Privé et Droit des Affaires" />
+  <meta name="author" content="Agence - Com'Eklair" />
+  <meta name="robots" content="all" />
+  <title>Cabinet AGDZ Avocats</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.css') }}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Rambla&display=swap" rel="stylesheet">
+  
+  <!-- Custom styles for this template -->
+  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
+
+  <!-- responsive style -->
+  <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet" />
+  
+  <!-- responsive icones FA -->
+  <script src="https://kit.fontawesome.com/e5ef42f47b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header -->
+    <header class="header_section">
+      <div class="container">
+        <!-- Barre de navigation-->
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a href="{{ path('website_home') }}">
+            <img src="{{ asset('assets/images/logo-agdz.png') }}" alt="Cabinet AGDZ Avocats" />
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link {% if app.request.attributes.get('_route') == 'website_home' %}actif{% endif %}" href="{{ path('website_home') }}">Notre équipe</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link {% if app.request.attributes.get('_route') == 'website_competences' %}actif{% endif %}" href="{{ path('website_competences') }}">Nos compétences</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link {% if app.request.attributes.get('_route') == 'website_formations' %}actif{% endif %}" href="{{ path('website_formations') }}">Nos formations</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link {% if app.request.attributes.get('_route') == 'website_actus' %}actif{% endif %}" href="{{ path('website_actus') }}">L'actualité</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link {% if app.request.attributes.get('_route') == 'website_contact' %}actif{% endif %}" href="{{ path('website_contact') }}">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="quote_btn-container ml-0 ml-lg-4 d-flex justify-content-center">
+              <a href="{{ path('rdv_new') }}">Mon RDV en ligne</a>
+            </div>
+            <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link {% if app.request.attributes.get('_route') == 'account_index' %}actif{% endif %}" href="{{ path('account_index') }}">Mon compte</a>          
+            </li>
+          </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+</div>
+    <!-- Affichage du contenu des pages -->
+    {% block body %}{% endblock %}
+
+    <!-- Footer -->
+    <section class="info_section layout_padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Plan du site</h5>
+            <ul>
+              <li><a href="{{ path('website_home') }}" style="color: #FFF;">Notre équipe</a> </li>
+              <li><a href="{{ path('website_competences') }}" style="color: #FFF;">Nos compétences</a></li>
+              <li><a href="{{ path('website_formations') }}" style="color: #FFF;">Nos formations</a></li> 
+              <li><a href="{{ path('website_actus') }}" style="color: #FFF;">L'actualité</a></li>   
+              <li><a href="{{ path('website_contact') }}" style="color: #FFF;">Contact</a></li>                                      
+            </ul>
+          </div>
+
+            <div class="col-md-4">
+              <h5>Mon compte</h5>
+              <ul>
+                <li><a href="{{ path('security_registration') }}" style="color: #FFF;">Créer un compte</a></li>
+                <li><a href="{{ path('rdv_new') }}" style="color: #FFF;">Prendre un rendez-vous</a></li>
+                <li><a href="{{ path('dossierlisteclient') }}" style="color: #FFF;">Suivre mon dossier</a></li>
+                <li><a href="{{ path('website_contact') }}" style="color: #FFF;">Demander un devis</a></li>   
+                <li><a href="{{ path('website_contact') }}" style="color: #FFF;">Envoyer un message</a></li>                                      
+              </ul>
+            </div>          
+          <div class="col-md-4">
+            <div class="social_container">
+              <h5>Suivez-nous</h5>
+              <div class="social-box">
+                <a href="#">
+                  <img src="{{ asset('assets/images/fb.png') }}" alt="">
+                </a>
+                <a href="#">
+                  <img src="{{ asset('assets/images/linkedin.png') }}" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="social_container">
+              <h5>Newsletter</h5>
+                <a href="{{ path('website_actus') }}#newsletter"  class="text-uppercase custom_blue-btn mr-3">Inscrivez-vous</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Copyright section -->
+  <section class="container-fluid footer_section">
+    <p>Copyright &copy; 2020 - AGDZ Avocats</p>
+  </section>
+
+<!-- JS-->
+  <script type="text/javascript" src="{{ asset('assets/js/jquery-3.4.1.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('assets/js/bootstrap.js') }}"></script>
+
+
+  {% block javascripts %}
+  <script>
+      $('.custom-file-input').on('change', function(event) {
+          var inputFile = event.currentTarget;
+          $(inputFile).parent()
+              .find('.custom-file-label')
+              .html(inputFile.files[0].name);
+      });
+  </script>
+{% endblock %}
+
+</body>
+</html>

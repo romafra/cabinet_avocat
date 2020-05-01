@@ -1,0 +1,27 @@
+{% extends 'template.html.twig' %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+  <!-- Demande de RDV -->
+  <section class="prez_compétence_section">
+    <div class="container">
+        <p>&nbsp;</p>
+        <h2 class="custom_heading">Prenez rendez-vous en ligne !</h2>
+        <hr>
+        <div class="row layout_padding2">
+        <div class="col-md-2">&nbsp;</div>
+          <div class="col-md-8">       
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <p><i>Tous les champs marqués d'un * sont obligatoires</i></p>
+            <div style="text-align: center;">
+                <button type="submit" class="custom_blue-btn_rdv">Valider</button>
+            </div> 
+            {{ form_end(form) }}            
+          </div>
+          <div class="col-md-2">&nbsp;</div>
+        </div>                
+    </div>
+</section>
+{% endblock %}

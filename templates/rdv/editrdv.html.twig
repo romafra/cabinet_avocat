@@ -1,0 +1,26 @@
+{% extends 'template.html.twig' %}
+
+{% form_theme rdvForm 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+  <!-- Edition d'un RDV personnel -->
+  <section class="prez_compétence_section">
+    <div class="container">
+        <p>&nbsp;</p>
+        <h2 class="custom_heading">Modifier un rendez-vous personnel</h2>
+        <hr>
+        <div class="row layout_padding2">
+          <div class="col-md-2">&nbsp;</div>
+          <div class="col-md-8">       
+            {{ form_start(rdvForm) }}
+            {{ form_widget(rdvForm) }}
+            <div style="text-align: center;">
+                <button type="submit" class="custom_blue-btn_rdv">Valider</button>
+            </div>          
+            {{ form_end(rdvForm) }}            
+          </div>
+          <div class="col-md-2">&nbsp;</div>
+        </div>                
+    </div>
+</section>
+{% endblock %}

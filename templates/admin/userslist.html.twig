@@ -1,0 +1,61 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+
+  <!-- Liste des utilisateurs -->
+  <section class="prez_compétence_section">
+    <div class="container">
+        <p>&nbsp;</p>
+        <h2 class="custom_heading">Liste des utilisateurs</h2>
+        <hr>
+        <div class="row layout_padding2">
+          <div class="col-md-12">
+            <!-- Message flash -->
+            {% for message in app.flashes('message') %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div> 
+            {% endfor %}   
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Adresse e-mail</th>
+                  <th scope="col">Role(s)</th>
+                  <th scope="col">Edition</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for user in users %}
+                <tr>
+                  <td>{{ user.id }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>
+                  <!-- Affichage des rôles de manière compréhensible-->
+                  {% for role in user.roles %}
+                      {% if role == "ROLE_USER" %}
+                          Utilisateur -
+                      {% elseif role == "ROLE_AVOCAT" %}
+                          Avocat -
+                      {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                    <a href="{{ path('admin_edituser', {'id': user.id}) }}" class="btn btn-primary">Modifier le rôle</a> 
+                    
+                    {% for role in user.roles %}
+                    <!-- Affichage du bouton d'initialisation d'avocat pour les utilisateurs AVOCAT-->
+                        {% if role == "ROLE_AVOCAT" %}
+                        <a href="{{ path('admin_newavocat', {'user_id': user.id}) }}" class="btn btn-primary">Initier l'avocat</a>
+                        {% endif %}
+                    {% endfor %}
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>                
+    </div>
+</section>
+  {% endblock %}

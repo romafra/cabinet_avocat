@@ -1,0 +1,72 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+
+<!-- Page contact-->
+<section class="container">
+    <div class="row mt-5" >
+	   <div class="col-12 col-sm-6  col-lg-6">
+        <!-- Affichage du message Flash de confirmation d'envoi d'un email-->
+        {% for message in app.flashes('message') %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div> 
+        {% endfor %}
+
+        <!-- Formulaire-->
+       <h3>Nous Contacter</h3>
+            {{ form_start(contactForm) }}
+            {{ form_widget(contactForm) }}
+            <div style="text-align: center;">
+                <button type="submit" class="custom_blue-btn_rdv">Envoyer</button>
+            </div> 
+            {{ form_end(contactForm) }}
+      </div>
+
+      <!-- Bloc bleu-->
+      <div class="col-12 col-sm-6  col-lg-6 pt-5" style="background-color:#027182;color:white">
+      <blockquote class="blockquote text-center ">
+            <p class="h4"><b>Vous souhaitez nous contacter ?</b></p>
+            <p class="h4 text-justify p-2">
+                Remplissez le formulaire ci-contre en sélectionnant l’objet de votre demande et le type de droit concerné.    
+            </p>
+             <p class="h4 text-justify p-2">Nous nous engageons à vous faire un retour dans les plus brefs délais.</p>
+        </blockquote>    
+         <blockquote class="blockquote text-justify pt-5">
+            <p class="h6">Conformément à la loi « Informatique et Libertés » du 6 janvier 1978 modifiée
+            et du Règlement Général sur la Protection des Données du 27 avril 2016, vous bénéficiez d’un droit d’accès, 
+            de rectification, de suppression, de limitation, et d’opposition aux informations qui vous concernent. 
+            Vous pouvez exercer ces droits en vous adressant au cabinet.</p>
+            <p class="h6 text-center pt-5">Cabinet AGDZ Avocats - 72 rue Paradis - 13006 Marseille</p>
+          </blockquote>    
+           <blockquote class="blockquote text-left pt-5">
+            <p style="font-size:15px"><em>Tous les champs marqués d'un * sont obligatoires</em></p>
+           </blockquote> 
+      </div>
+    </div>
+</section>
+<p>&nbsp;</p>
+
+<!-- Bloc coordonnées -->
+<section class="layout_padding_avocat">
+    <div class="container">
+        <div class="row layout_padding2">
+            <div class="col-md-8">
+                <p>&nbsp;</p>
+                <p style="font-size: 30px;">01 02 03 04 05</p>
+                <p><b>Cabinet AGDZ Avocats</b><p>
+                <p>72 rue Paradis <br>
+                    13006 MARSEILLE</p>
+                <p>Notre cabinet est ouvert du lundi au vendredi, de 9h à 18h</p>
+                <p>Nous contacter par mail : agdz[@]contact.fr</p>
+            </div>
+            <div class="col-md-4">
+                <blockquote class="blockquote text-center">
+                    <p>Plan d'accés</p>
+                    <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.104635727277!2d5.375323715486029!3d43.291130379135325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9c0b9edbfb235%3A0xe35deb6fc6ea8464!2s72%20Rue%20Paradis%2C%2013006%20Marseille!5e0!3m2!1sfr!2sfr!4v1586420812874!5m2!1sfr!2sfr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

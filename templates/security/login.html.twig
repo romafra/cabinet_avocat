@@ -1,0 +1,45 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+  <!-- Connexion de l'utilisateur -->
+  <section class="prez_compétence_section">
+    <div class="container">
+        <p>&nbsp;</p>
+        <h2 class="custom_heading">Connexion</h2>
+        <hr>
+        <div class="row layout_padding2">
+          <div class="col-md-2">&nbsp;</div>
+          <div class="col-md-8">
+            <form action="{{ path('security_login') }}" method="POST">
+                <div class="form-group">
+                    <input type="text"  placeholder="adresse email" required name="_username" class="form-control">
+                </div>    
+                <div class="form-group">
+                    <input type="password" placeholder="Mot de passe" required name="_password" class="form-control" >
+                </div>   
+                <div style="text-align: center;">
+                    <button type="submit" class="custom_blue-btn_rdv">Valider</button>
+                </div>   
+                </form>        
+            </div>
+          <div class="col-md-2">&nbsp;</div>
+        </div>                
+    </div>
+</section>
+
+<!-- Proposition de création de compte-->
+<section class="prez_compétence_section">
+    <div class="container">
+        <p>&nbsp;</p>
+        <h2 class="custom_heading">Vous n'avez pas de compte ?</h2>
+        <hr>
+        <div class="row layout_padding2">
+          <div class="col-md-2">&nbsp;</div>
+          <div class="col-md-8" style="text-align: center;"> 
+            <a href="{{ path('security_registration') }}" class="text-uppercase custom_blue-btn mr-3">Inscrivez-vous !</a>
+            </div>
+          <div class="col-md-2">&nbsp;</div>
+        </div>                
+    </div>
+</section>
+{% endblock %}

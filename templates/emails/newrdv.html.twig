@@ -1,0 +1,11 @@
+<h1>Nouvelle demande de rendez-vous</h1>
+<ul>
+    <li>Avocat : Maitre {{ contact.avocat.firstname }} {{ contact.avocat.lastname }}</li>
+    <li>Demandeur : {{ contact.forname}}</li>
+    <li>Date et heure : Le {{ contact.date | date("d/m/Y") }} à {{ contact.time | date("H:i") }}</li>
+    <li>Demandeur : {{ contact.forname}}</li>
+    <li>Sujet : {{ contact.subject}}</li>
+    <li>Mode : {{ contact.mode}}</li>
+</ul>
+
+<p>Pour visualiser et gérer le rendez-vous, accédez à votre tableau de bord administrateur !</p>

@@ -1,0 +1,82 @@
+{% extends 'template.html.twig' %}
+
+
+{% block body %}
+ <section class="prez_compétence_section">
+    <div class="container">
+        <p>&nbsp;</p>
+      
+<div class="container">
+        <div class="row">
+                <!--La classe bg-info ajoute un fond bleu à l'élément-->
+
+                <div class="col-2"><a class="btn btn-primary btn-sm" style="background-color: #027182;"  href={{ path('listeclient') }} >Ajouter un dossier</a></div>
+                <!--La classe bg-warning ajoute un fond jaune à l'élément-->
+                <div class="col-8">  <h2 class="custom_heading">Liste des dossiers de Maître {{ tabavocat.firstname}}  {{tabavocat.lastname}}</h2>
+                <hr></div>
+                <!--La classe bg-success ajoute un fond vert à l'élément-->
+                <div class="col-2"></div>
+        </div>
+</div>
+
+{% if nbdossier == 0 %}
+        <h3>Aucun Dossier en cours</h3>
+{% else %}
+        <h3> {{ nbdossier }} Dossier(s)</h3>
+{% endif %}
+
+
+<table class="table table-hover table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Ref</th>
+        <th scope="col">Date</th>
+        <th scope="col">Description</th>
+        <th scope="col">Client</th>
+        <th scope="col">Statut</th>
+        <th scope="col">Gestion</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% set i = 0 %}
+        {% for dossier in tablodossier %}
+       
+      <tr>
+        <td>{{ dossier.dosref }}</td>
+        <td>{{ dossier.dosdate | date("d/m/Y") }}</td>
+        <td>{{ dossier.dosdescription}}</td>
+        <td> {{ tabclient[dossier.doscliid]}}</td>
+        
+        <td>
+            {% if dossier.dosstatut == 0 %}
+                    En cours
+            {% elseif dossier.dosstatut  == 1 %}
+                    Suspendu
+            {% else %}
+                    Archivé
+            {% endif %}        
+        </td>
+        <td>
+        <a class="btn btn-primary btn-sm" style="background-color: #027182;" href={{ path("unDossier", { 'id': dossier.id,'action':1,'cliid': dossier.doscliid}) }}>consulter</a>
+        <a class="btn btn-primary btn-sm" style="background-color: #027182;" href={{ path("dossierdocument", { 'id': dossier.id,'ref':dossier.dosref}) }}>Ajouter un document</a>
+
+
+
+        </td>
+      </tr>
+      {% set i = i + 1 %}
+      {% endfor %}
+    </tbody>
+  </table>
+        <div><div>{{ knp_pagination_render(tablodossier) }}</div></div>
+    </div>
+
+
+<div class="container">
+        <div class="row">
+                <div class="col-12 mt-5"></div>
+        </div>
+</div>
+
+</section>
+{% endblock %}

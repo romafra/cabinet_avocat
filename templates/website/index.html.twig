@@ -1,0 +1,188 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+
+  <!-- slider section -->
+  <section class=" slider_section position-relative">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="slider_item-box">
+            <div class="slider_item-container">
+              <div class="container">
+                <div class="row">
+                <div class="col-md-1">&nbsp;</div>
+                  <div class="col-md-10">
+                    <div class="slider_item-detail">
+                      <div>
+                        <h1>Un accompagnement réactif à vos besoins</h1>
+                        <h2>Cabinet pluridisciplinaire</h2>
+                        
+                        <p style="text-align: justify;">Afin de respecter les engagements prononcés lors de leur prestation de serment, 
+                        Maître GUENDOUZ et Maître AMIC vous garantissent un accompagnement en toute transparence, 
+                        compétence et rigueur.</p>
+
+                        <p style="text-align: justify;">Fidèles aux codes de déontologie qui caractérisent la profession, Maître GUENDOUZ et 
+                        Maître AMIC sauront se rendre disponibles afin de  vous accompagner avec efficacité.</p>
+
+                        <p style="text-align: justify;">Le cabinet AGDZ Avocats, constitué en AARPI, a pour vocation d’exercer une activité 
+                        pluridisciplinaire et vous assure ainsi une intervention en toute indépendance, probité 
+                        et confidentialité.</p>
+
+                        <p style="text-align: justify;">Que vous soyez particulier ou professionnel, du secteur public ou du secteur privé, 
+                        nous mettons à votre disposition toute notre expertise par le biais de nos formations 
+                        sur-mesures.</p>
+
+                        <a href="{{ path('website_competences') }}" class="text-uppercase custom_blue-btn mr-3">En savoir plus</a>
+                        <p>&nbsp;</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-1">&nbsp;</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Description Avocats 1 -->
+  <section class="prez_avocat_section">
+    <div class="container">
+        <p>&nbsp;</p>
+      <h2 class="custom_heading">Maître Célia GUENDOUZ</h2>
+      <hr>
+      <div class="row layout_padding2">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+            <div class="fruit_img-box d-flex justify-content-center align-items-center">
+              <img src="{{ asset('assets/images/photo-celia-guendouz.png') }}" alt="Maître Célia GUENDOUZ" class="" width="250px" />
+            </div>
+          </div>
+
+        <div class="col-md-8">
+          <div class="avocat_detail-box">
+            <h3>L’Expertise du Pénal adapté à chaque domaine</h3>
+            <p class="mt-4 mb-5" style="text-align: justify;">
+                Avocate au Barreau de Marseille, Maître Célia Guendouz intervient en <b>droit pénal</b> et en 
+                <b>droit public</b>. Forte d’une expertise reconnue au sein même des établissements publics de la région,
+                 Maître Célia GUENDOUZ a également exercé plusieurs années auprès de cabinets reconnus pour leur 
+                 excellence.<br><br> 
+
+                <b>Carrière :</b> Après avoir obtenu un Master I en droit public, un Master II en Pratique des droits fondamentaux et un second Master II en Contentieux administratif, elle intègre l’Ecole des avocats du Sud Est.<br><br>
+                Maître Célia GUENDOUZ a prêté serment en janvier 2017.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>     
+  <!-- end slider section --> 
+
+ <!-- Description Avocats 2 -->
+ <section class="layout_padding_avocat">
+    <div class="container">
+        <p>&nbsp;</p>
+      <h2 class="custom_heading">Maître Léa AMIC</h2>
+      <hr>
+      <div class="row layout_padding2">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+            <div class="fruit_img-box d-flex justify-content-center align-items-center">
+              <img src="{{ asset('assets/images/photo-lea-amic.png') }}" alt="Maître Léa AMIC" class="" width="250px" />
+            </div>
+          </div>
+
+        <div class="col-md-8">
+          <div class="avocat_detail-box">
+            <h3>La qualité d’un accompagnement sur-mesure</h3>
+            <p class="mt-4 mb-5" style="text-align: justify;">
+                Maître Léa AMIC exerce au barreau de Marseille et  intervient tant en <b>conseil</b> qu’en contentieux 
+                dans l’ensemble des problématiques liées au <b>droit du travail</b>, des <b>sociétés</b> et du <b>commerce,</b> 
+                du droit civil, des personnes et de la famille, de la construction et de l’immobilier.<br><br>
+                
+                <b>Carrière :</b> Major de sa promotion à l’issue de son Master II Contrats publics et privés, 
+                Maître Léa AMIC a obtenu le grade de Docteur en Droit avec la mention très honorable et les félicitations
+                unanimes du Jury. Elle a ensuite intégré l’Ecole des avocats du Sud Est en collaborant avec le service 
+                juridique d’un syndicat patronal.<br><br>
+
+                Maître Léa AMIC a par ailleurs enseigné au sein de l’Université d’AVIGNON ET DES PAYS DE VAUCLUSE puis auprès de l’Université d’AIX-MARSEILLE
+                Maître Léa AMIC a prêté serment en janvier 2017. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>     
+  <!-- end slider section --> 
+
+
+ <!-- Honoraires section -->
+ <section class="honoraire_section">
+  <div class="container">
+      <p>&nbsp;</p>
+      <h2 class="custom_heading">Nos honoraires</h2>
+      <hr>
+      <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+          <div class="col-md-10">
+            <div class="avocat_detail-box">
+              <div style="text-align: center;">
+                <h3>Faites votre demande de devis en ligne, nous vous répondrons dans les plus brefs délais</h3>
+                <a href="{{ path('website_contact') }}" class="text-uppercase custom_blue-btn mr-3">Mon devis</a>
+                <p>&nbsp;</p>
+                <p class="mt-4 mb-5" style="text-align: justify;">Après acceptation du devis, une convention d’honoraires est conclue aux termes de laquelle sont précisés 
+                  le montant ou le mode de détermination des honoraires<br><br>
+
+                  Le cabinet AGDZ Avocats accepte l’aide juridictionnelle afin de vous permettre, en fonction de votre
+                  situation, de bénéficier d'une prise en charge totale ou partielle par l'État des honoraires et frais
+                  de justice.<br><br>
+                  
+                  Contactez nous ici pour savoir si vous pouvez prétendre à cette aide.
+
+                  <div style="text-align: center;"><a href="{{ path('website_contact') }}" class="text-uppercase custom_blue-btn mr-3">Nous contacter</a></div><br>
+                  </p>
+                  
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1">&nbsp;</div>
+        </div>
+  </div>
+</section>     
+<!-- end slider section -->   
+
+
+
+
+
+  <!-- Actualités section -->
+  <section class="layout_padding_avocat">
+    <div class="container">
+        <p>&nbsp;</p>
+        <h2 class="custom_heading">Une actualité hebdomadaire décryptée</h2>
+        <hr>
+        {% for actu in actu %}
+        <div class="row layout_padding2">
+          <div class="col-md-8">
+            <div class="avocat_detail-box">
+              <h3>{{ actu.title }}</h3>
+              <p class="mt-4 mb-5">
+                  {{ actu.description }}
+              </p>
+              {% if actu.link %}
+              <a href="{{ actu.link }}" class="custom_blue-btn_rdv mr-3">Lire la suite</a>
+              {% endif %}            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-center align-items-center">
+              <div class="fruit_img-box d-flex justify-content-center align-items-center">
+                <img src="{{ actu.imageurl }}" alt="" class="" width="250px" />
+              </div>
+            </div>
+        </div>
+  {% endfor %}
+    </div>
+</section>     
+  <!-- end slider section -->   
+
+{% endblock %}

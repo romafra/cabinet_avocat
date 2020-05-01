@@ -1,0 +1,50 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+
+ <!-- Tableau de Bord Utilisateur -->
+ <section class="prez_compétence_section">
+    <div class="container">
+        <p>&nbsp;</p>
+        <h2 class="custom_heading">Mon tableau de bord utilisateur</h2>
+        <hr>
+        <div style="text-align: center;">
+          <a href=  {{ path('security_logout') }}><i class="fas fa-sign-out-alt"></i> Se déconnecter aacount</a>
+         </div>
+        <div class="layout_padding2">
+            <div class="card-deck">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title" style="text-align: center;"><i class="far fa-calendar-alt" style="font-size: 40px;"></i> <br>Mes rendez-vous</h5>
+                  <hr>
+                  <p class="card-text" style="text-align: center;">
+                    Visualiser et gérez vos demandes de rendez-vous.
+                  </p>
+                  <div style="text-align: center;">
+                    <a href="{{ path('rdv_listforid') }}" class="text-uppercase custom_blue-btn mr-3">Mes RDV</a><br><br>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                <h5 class="card-title" style="text-align: center;"><i class="fas fa-folder" style="font-size: 40px;"></i><br>Mes dossiers personnels</h5>
+                <hr>
+                <p class="card-text" style="text-align: center;">
+                    Suivez vos dossiers personnels
+                </p>
+                <div style="text-align: center;">
+                 <a class="text-uppercase custom_blue-btn mr-3"  href={{ path('dossierlisteclient') }}>Liste des dossiers</a>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Affichage du bouton d'administration uniquement si le role de l'utilisateur est AVOCAT -->
+          {% if is_granted('ROLE_AVOCAT') %}
+          <div style="text-align: center;">
+              <a href="{{ path('admin_index') }}" class="text-uppercase custom_blue-btn mr-3">Administration</a><br><br>
+          </div>
+          {% endif %}      
+    </div>
+  </section>
+{% endblock %}

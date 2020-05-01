@@ -1,0 +1,44 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+
+ <!-- Liste des articles -->
+ <section class="prez_compétence_section">
+  <div class="container">
+      <p>&nbsp;</p>
+      <h2 class="custom_heading">Liste des articles</h2>
+      <hr>
+      <div style="text-align: center;"><a href="{{ path('admin_newarticle') }}" class="custom_blue-btn">Ajouter</a></div>
+      <div class="row layout_padding2">
+        <div class="col-md-12">       
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Description</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for actu in actu %}
+              <tr>
+                <td>{{ actu.id }}</td>
+                <td>{{ actu.title }}</td>
+                <td>{{ actu.description }}</td>
+                <td>
+                  <form action="/admin/editarticle/{{ actu.id }}" method="POST">
+                    <input type="hidden" value="{{ actu.id }}">
+                    <button type="submit" class="custom_blue-btn">Modifier</button>
+                  </form>
+              </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>                
+  </div>
+</section>
+
+  {% endblock %}

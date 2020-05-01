@@ -1,0 +1,35 @@
+{# {% extends 'base.html.twig' %} #}
+{% extends 'template.html.twig' %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}Hello ClientController!{% endblock %}
+
+
+{% block body %}
+ <section class="prez_compétence_section">
+    <div class="container">
+        <p>&nbsp;</p>
+        <h2 class="custom_heading">{{titre}}Création d'un Client</h2>
+        <hr>
+        <p>Renseignez le formulaire ci-dessous.</p>
+        <div class="row layout_padding2">
+            <div class="col-md-2">&nbsp;</div>
+
+          <div class="col-md-8">       
+            {{ form_start(form) }}
+            
+            {{ form_widget(form) }}
+
+            <div style="text-align: center;">
+                <button type="submit" class="custom_blue-btn_rdv">Valider</button>
+            </div>
+            
+            {{ form_end(form) }}            
+          </div>
+          <div class="col-md-2">&nbsp;</div>
+        </div>                
+    </div>
+</section>
+{% endblock %}
+

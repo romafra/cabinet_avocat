@@ -1,0 +1,29 @@
+{% extends 'template.html.twig' %}
+
+{% form_theme userForm 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+  <!-- Modification d'un utilisateur -->
+  <section class="prez_compétence_section">
+    <div class="container">
+        <p>&nbsp;</p>
+        <h2 class="custom_heading">Modifier le rôle de l'utilisateur</h2>
+        <hr>
+        <div class="row layout_padding2">
+            <div class="col-md-2">&nbsp;</div>
+
+          <div class="col-md-8">       
+            {{ form_start(userForm) }}
+            {{ form_widget(userForm) }}
+            <div style="text-align: center;">
+              <button type="submit" class="custom_blue-btn_rdv">Valider</button>
+            </div>
+            {{ form_end(userForm) }}            
+          </div>
+          <div class="col-md-2">&nbsp;</div>
+        </div>                
+    </div>
+</section>
+
+{% endblock %}

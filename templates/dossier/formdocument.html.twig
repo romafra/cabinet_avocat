@@ -1,0 +1,38 @@
+
+{% extends 'template.html.twig' %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}{{controller_name}}{% endblock %}
+
+
+{% block body %}                                            <!-- Formulaire de creation d'un document -->
+ <section class="prez_compétence_section">
+    <div class="container">
+        <p>&nbsp;</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-2"><a class="btn btn-primary btn-sm" style="background-color: #027182;" href={{ path('dossierliste') }} >Vos Dossiers</a></div>
+                <div class="col-8">  <h2 class="custom_heading">{{Titre}} {{Reference}}</h2><hr></div>
+                <div class="col-2">   </div>
+            </div>
+        </div>
+
+        <div class="row layout_padding2">
+            <div class="col-md-2">&nbsp;</div>
+            <div class="col-md-8">       
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <div style="text-align: center;">
+                    <button type="submit" class="custom_blue-btn_rdv">Valider</button>
+                </div>
+                {{ form_end(form) }}     
+                <p>* Saisie Obligatoire</p>       
+            </div>
+          <div class="col-md-2">&nbsp;</div>
+        </div>                
+    </div>
+</section>
+{% endblock %}
+
+

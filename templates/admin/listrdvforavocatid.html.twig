@@ -1,0 +1,47 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+
+ <!-- Liste des rendez-vous de l'avocat connecté -->
+ <section class="prez_compétence_section">
+  <div class="container">
+      <p>&nbsp;</p>
+      <h2 class="custom_heading">Mes rendez-vous</h2>
+      <hr>
+      <div class="row layout_padding2">
+        <div class="col-md-12">       
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Motif</th>
+                <th scope="col">Rendez-vous</th>
+                <th scope="col">Bénéficiaire</th>
+                <th scope="col">Lieu</th>
+                <th scope="col">Statut</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for rdv in rdv %}
+              <tr>
+                <td>{{ rdv.subject }}</td>
+                <td>Le {{ rdv.date | date("d/m/Y") }} à {{ rdv.time | date("H:i") }}</td>
+                <td>{{ rdv.forname }}</td>
+                <td>{{ rdv.mode }}</td>
+                <td>{{ rdv.status }}</td>
+                <td>
+                  <form action="/admin/editrdv/{{ rdv.id }}" method="POST">
+                    <input type="hidden" value="{{ rdv.id }}">
+                    <button type="submit" class="custom_blue-btn">Modifier</button>
+                  </form>
+              </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>                
+  </div>
+</section>
+
+  {% endblock %}

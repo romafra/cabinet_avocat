@@ -1,0 +1,95 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+
+ <!-- Tableau de Bord Administrateur -->
+ <section class="prez_compétence_section">
+    <div class="container">
+        <p>&nbsp;</p>
+       <h2 class="custom_heading">Mon tableau de bord administrateur</h2>
+       <hr>
+       <div style="text-align: center;">
+        {# <a href="/logout"><i class="fas fa-sign-out-alt"></i> Se déconnecter </a> #}
+          <a href=  {{ path('security_logout') }}><i class="fas fa-sign-out-alt"></i> Se déconnecter admin</a>
+          
+          
+       </div>
+        {% for avocat in avocat %}
+            <!-- Affichage du tableau de bord uniquement si le nom et le prénom de l'avocat est bien enregistré en base-->
+            {% if avocat.firstname and avocat.lastname %}
+                <div class="layout_padding2">
+                  <div class="card-deck">
+                    <!-- Bloc RDV-->
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;"><i class="far fa-calendar-alt" style="font-size: 40px;"></i> <br>Mes rendez-vous</h5>
+                        <hr>
+                        <p class="card-text" style="text-align: center;">
+                          Visualiser et gérez vos demandes de rendez-vous.
+                        </p>
+                        <div style="text-align: center;">
+                            <form action="{{ path('admin_listforid') }}" method="POST">
+                              <input type="hidden" name="post_id" value="{{ avocat.id }}">
+                              <button type="submit" class="custom_blue-btn mr-3">Cliquez ici</button>
+                            </form>
+                        <br><br>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Bloc Dossier -->
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;"><i class="fas fa-folder" style="font-size: 40px;"></i><br>Gestion des dossiers</h5>
+                        <hr>
+                        <p class="card-text" style="text-align: center;">
+                          Créez et suivez les dossiers de vos clients
+                        </p>
+                        <div style="text-align: center;">
+                          <a href={{ path('dossierliste') }} class="custom_blue-btn mr-3">Cliquez ici</a><br><br>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>   
+                <div class="layout_padding2">
+                  <div class="card-deck">
+                    <!-- Bloc Articles -->
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;"> <i class="far fa-newspaper" style="font-size: 40px;"></i></i><br>Gestion des articles</h5>
+                        <hr>
+                        <p class="card-text" style="text-align: center;">
+                          Visualisez et Ajoutez de nouveaux articles pour la rubriques actualité
+                        </p>
+                        <div style="text-align: center;">
+                          <a href="{{ path('admin_listarticles') }}" class="custom_blue-btn mr-3">Cliquez ici</a><br><br>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Bloc Utilisateurs-->
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;"> <i class="fas fa-users" style="font-size: 40px;"></i><br>Gestion des utilisateurs</h5>
+                        <hr>
+                        <p class="card-text" style="text-align: center;">
+                          Visualisez et gérez les droits d'accès ! 
+                        </p>
+                        <div style="text-align: center;">
+                          <a href="{{ path('admin_userslist') }}" class="custom_blue-btn mr-3">Cliquez ici</a><br><br>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>              
+            {% else %}
+                <!-- Si informations manquantes en base, affichage de la demande de complétion du profil--> 
+                <div style="text-align: center;">
+                  <p>Votre profil avocat n'est pas complet.<br><br>
+                  Nous vous invitons à cliquer sur le bouton ci-dessous et renseigner les champs obligatoires pour afficher votre tableau de bord</p>
+                  <a href="{{ path('admin_editprofil', {'id': avocat.id}) }}" class="text-uppercase custom_blue-btn mr-3">Compléter mon Profil</a><br><br>
+                </div>           
+            {% endif %}
+        {% endfor %}              
+    </div>
+  </section>
+{% endblock %}
